@@ -14,7 +14,7 @@ export default function Aside() {
           className="brand-image img-circle elevation-3"
           style={{ opacity: ".8" }}
         />
-        <span className="brand-text font-weight-light">PAGO DE CLASES</span>
+        <span className="brand-text font-weight-light">Tienda</span>
       </NavLink >
       {/* Sidebar */}
       <div className="sidebar">
@@ -30,24 +30,53 @@ export default function Aside() {
             {/* Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library */}
             <li className="nav-item">
-              <NavLink to="/pago-clases" className="nav-link">
-                <i className="nav-icon fas fa-table" />
+              <NavLink to="/categorias" className="nav-link">
+                <i className="nav-icon far fa-image" />
                 <p>
-                  Registrar pago
+                    Categorias
                   <i className="fas fa-angle-left right"/>
                 </p>
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/tabla-pago-x-fecha" className="nav-link">
+              <NavLink to="/productos" className="nav-link">
                 <i className="nav-icon far fa-image" />
                 <p>
-                  Tabla Pagos por Fecha
+                    Productos
                   <i className="fas fa-angle-left right"/>
                 </p>
               </NavLink>
             </li>
-
+            <li className="nav-item">
+            <a href="#" className="nav-link">
+              <i className="nav-icon fas fa-edit"></i>
+              <p>
+                Presupuestos
+                <i className="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul className="nav nav-treeview">
+              <li className="nav-item">
+                <a href="/crear" className="nav-link">
+                  <i className="far fa-circle nav-icon"></i>
+                  <p>Crear Presupuesto</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/lista" className="nav-link">
+                  <i className="far fa-circle nav-icon"></i>
+                  <p>Lista Presupuesto</p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/historial" className="nav-link">
+                  <i className="far fa-circle nav-icon"></i>
+                  <p>Historial Presupuestal</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+            
           </ul>
         </nav>
         {/* /.sidebar-menu */}

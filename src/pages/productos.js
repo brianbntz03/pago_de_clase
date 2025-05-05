@@ -1,14 +1,12 @@
-import React from "react";
-import ClasePago from "../Components/clasepago";
+import { ListadoProducto } from "../Components/listado_producto"
 
-const PagoClase = () => {
-      let clasepago = ClasePago();
-      return (
+const Productos = () => {
+  let productos =  ListadoProducto();
+  return (
         <div className="card">
           <div className="card-header border-0">
-            <h3 className="card-title">Pago Clase</h3>
+            <h3 className="card-title">Presupuesto</h3>
             <div className="card-tools">
-            <a class="btn btn-sm btn-info float-right" href="/pago-clase" >pago clase</a>
               <a href="#" className="btn btn-tool btn-sm">
                 <i className="fas fa-download" />
               </a>
@@ -18,10 +16,10 @@ const PagoClase = () => {
             </div>
           </div>
           <div className="card-body table-responsive p-0">
-            {clasepago}
+            {productos}
           </div>
         </div>
-      );
-    };
+    )
+}
 
-export default PagoClase;
+export default Productos
