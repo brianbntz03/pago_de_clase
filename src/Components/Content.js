@@ -37,7 +37,7 @@ export default function Content(){
                           <Route path="/crear" Component={CrearPresupuesto}></Route>  
                           <Route path="/historial" Component={HistorialPresupuesto}></Route>
                           <Route path="/lista" Component={ListaPresupuesto}></Route>
-                          <Route path="/crear-categorias" Component={CreacionCategorias}></Route>
+                          <Route path="/crearcategorias" Component={CreacionCategorias}></Route>
                         </Routes>
                     </div>
                   </div>

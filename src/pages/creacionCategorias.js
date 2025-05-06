@@ -8,7 +8,6 @@ const CreacionCategorias = () => {
           <div className="card-header border-0">
             <h1 className="card-title">Categorias</h1>
             <div className="card-tools">
-              <a class="btn btn-sm btn-info float-right" href='/crear-categorias' > Crear Categoria</a>
               <a href="#" className="btn btn-tool btn-sm">
                 <i className="fas fa-download" />
               </a>
