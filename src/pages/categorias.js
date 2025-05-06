@@ -1,15 +1,15 @@
 import React from 'react';
 import { TodasLasCategorias } from '../Components/todas-las-categorias';
 
+
 const categorias = () => {
-    let todas_las_categorias = TodasLasCategorias();
-    return (
-      <div className="card">
-        <div className="card-header border-0">
-          <h3 className="card-title">Categorias</h3>
-          <div className="card-tools">
-          <a class="btn btn-sm btn-info float-right" href="/editar" >editar</a>
-          <a class="btn btn-sm btn-info float-right" href="/borrar" >borrar</a>
+  let Todas_Las_Categorias = TodasLasCategorias();
+  return (
+    <div className="card">
+      <div className="card-header border-0">
+        <h1 className="card-title">Categorias</h1>
+        <div className="card-tools">
+          <a class="btn btn-sm btn-info float-right" href='/crearcategorias' > Crear Categoria</a>
           <a href="#" className="btn btn-tool btn-sm">
             <i className="fas fa-download" />
           </a>
@@ -19,10 +19,10 @@ const categorias = () => {
         </div>
       </div>
       <div className="card-body table-responsive p-0">
-        {todas_las_categorias }
+        {Todas_Las_Categorias}
       </div>
     </div>
-    )
+  )
 }
 
 export default categorias

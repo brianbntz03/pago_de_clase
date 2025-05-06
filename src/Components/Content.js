@@ -5,6 +5,7 @@ import Productos from "../pages/productos";
 import CrearPresupuesto from "../Presupuestos/CrearPresupuesto";
 import HistorialPresupuesto from "../Presupuestos/HistorialPresupuesto";
 import ListaPresupuesto from "../Presupuestos/ListaPresupuesto";
+import CreacionCategorias from "../pages/creacionCategorias";
 
 export default function Content(){
     return(
@@ -36,6 +37,7 @@ export default function Content(){
                           <Route path="/crear" Component={CrearPresupuesto}></Route>  
                           <Route path="/historial" Component={HistorialPresupuesto}></Route>
                           <Route path="/lista" Component={ListaPresupuesto}></Route>
+                          <Route path="/crear-categorias" Component={CreacionCategorias}></Route>
                         </Routes>
                     </div>
                   </div>
