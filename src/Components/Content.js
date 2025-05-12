@@ -6,6 +6,7 @@ import CrearPresupuesto from "../Presupuestos/CrearPresupuesto";
 import HistorialPresupuesto from "../Presupuestos/HistorialPresupuesto";
 import ListaPresupuesto from "../Presupuestos/ListaPresupuesto";
 import CreacionCategorias from "../pages/creacionCategorias";
+import Articulos from "../pages/Articulos";
 
 export default function Content(){
     return(
@@ -38,6 +39,7 @@ export default function Content(){
                           <Route path="/historial" Component={HistorialPresupuesto}></Route>
                           <Route path="/lista" Component={ListaPresupuesto}></Route>
                           <Route path="/crearcategorias" Component={CreacionCategorias}></Route>
+                          <Route path="/articulos" Component={Articulos}></Route>
                         </Routes>
                     </div>
                   </div>

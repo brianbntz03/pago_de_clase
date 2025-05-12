@@ -6,6 +6,7 @@ export const TodasLasCategorias = () => {
     const [categorias, setCategorias] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+   
 
     const fetchCategorias = async () => {
         try {
@@ -64,6 +65,7 @@ export const TodasLasCategorias = () => {
         );
     }
 
+   
     return (
         <div className="categorias-container">
             <div className="categorias-lista">

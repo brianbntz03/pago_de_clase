@@ -1,7 +1,9 @@
 import React from "react"
+import { Articuloss } from "../Components/articuloss"
 
 
 const Articulos = () => {
+  let articulos = Articuloss();
     return (
         <div className="card">
         <div className="card-header border-0">
@@ -17,7 +19,7 @@ const Articulos = () => {
         </div>
       </div>
       <div className="card-body table-responsive p-0">
-        {}
+        {articulos}
       </div>
     </div>
     )

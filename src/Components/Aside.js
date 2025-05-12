@@ -48,6 +48,15 @@ export default function Aside() {
               </NavLink>
             </li>
             <li className="nav-item">
+              <NavLink to="/articulos" className="nav-link">
+                <i className="nav-icon far fa-image" />
+                <p>
+                    articulos
+                  <i className="fas fa-angle-left right"/>
+                </p>
+              </NavLink>
+            </li>
+            <li className="nav-item">
             <a href="#" className="nav-link">
               <i className="nav-icon fas fa-edit"></i>
               <p>
@@ -76,7 +85,6 @@ export default function Aside() {
               </li>
             </ul>
           </li>
-            
           </ul>
         </nav>
         {/* /.sidebar-menu */}
