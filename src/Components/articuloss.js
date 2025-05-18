@@ -57,16 +57,15 @@ export const Articuloss = () => {
         );
     }
     
-    
 
     return (
         <div>
-        <h2>articulos de Ferreteria</h2>
-        <table style={{ border: "1px solid black", width: "100%", textAlign: "left" , marginTop: "20px"}}>
+        <p>articulos de Ferreteria</p>
+        <table className="table table-striped table-valign-middle table-bordered">
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>descripcion</th>
+                    <th>Descripcion</th>
                     <th>Activo</th>
                 </tr>
             </thead>
