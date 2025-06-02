@@ -48,19 +48,19 @@ export default function Aside() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/articulos" className="nav-link">
+              <NavLink to="/buscar-articulos-presupuesto" className="nav-link">
                 <i className="nav-icon far fa-image" />
                 <p>
-                    articulos
+                    buscar articulos de Presupuesto
                   <i className="fas fa-angle-left right"/>
                 </p>
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/buscar-articulos-presupuesto" className="nav-link">
+              <NavLink to="/articulos" className="nav-link">
                 <i className="nav-icon far fa-image" />
                 <p>
-                    buscar articulos de Presupuesto
+                    articulos
                   <i className="fas fa-angle-left right"/>
                 </p>
               </NavLink>

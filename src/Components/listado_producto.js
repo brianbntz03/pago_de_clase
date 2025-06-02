@@ -6,6 +6,24 @@ export function ListadoProducto() {
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    const handleEliminar = async (id) => {
+    try {
+        
+         await fetch(`http://localhost:3001/categoria/${id}`, {
+             method: 'DELETE',
+         });
+
+        // Elimina del estado
+        const nuevosProductos = productos.filter(producto => producto.id !== id);
+        setProductos(nuevosProductos);
+    } catch (error) {
+        console.error("Error al eliminar el producto:", error);
+    }
+};
+
+
+
     const fetchProductos = async () => {
         try {
             const response = await fetch('http://localhost:3001/categoria', {
@@ -55,7 +73,7 @@ export function ListadoProducto() {
             </div>
         );
     }
-    if (!productos || productos.length === 0) {
+  if (!productos || productos.length === 0) {
         return (
             <div className="error-container">
                 <h3>No hay productos disponibles</h3>
@@ -90,7 +108,7 @@ export function ListadoProducto() {
                              <td> {producto.stock} </td>
                              <td> 
                                  <button className="link-button" onClick={() => console.log('Editar clicked')}>editar</button> 
-                                 <button className="link-button" onClick={() => console.log('Eliminar clicked')}>eliminar</button> 
+                                 <button className="link-button" onClick={() => handleEliminar(producto.id)}>eliminar</button>
                              </td>
                          </tr>
                      ))}
