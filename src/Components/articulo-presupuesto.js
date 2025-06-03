@@ -101,18 +101,19 @@ export const ArticuloPresupuesto = () => {
 
   return (
     <div>
-      <div style={{ display: "flex", marginBottom: "10px", justifyContent: "flex-start" }}>
-        <p>Buscar artículo
-          <input
-            type="text"
-            size="30"
-            value={busqueda}
-            onChange={(e) => setBusqueda(e.target.value)}
-            style={{ marginLeft: "5px" }}
-          />
-        </p>
-        <button className="btn btn-sm btn-info float-right" onClick={handleSearch} style={{ marginLeft: "10px" }}>Buscar</button>
-      </div>
+      <form onSubmit={(e) =>{
+        e.preventDefault();
+        handleSearch();
+      }} 
+      style={{ display: "flex", alignItems: "center", marginBottom: "10px"}}>
+        <label style={{ marginRight: "5px" }}> buscar articulo</label>
+        <input type="text"
+         size="30" 
+         value={busqueda} 
+         onChange={(e) => setBusqueda(e.target.value)}
+         />
+         <button type="submit" className="btn btn-sm btn-info float-right"> buscar</button>
+      </form>
 
       <h3>Lista de artículos</h3>
       <table className="table table-striped table-valign-middle table-bordered">
@@ -128,11 +129,11 @@ export const ArticuloPresupuesto = () => {
         <tbody>
           {articulosFiltrados.map((articulo) => (
             <tr key={articulo.id}>
-              <td>{articulo.codigo}</td>
+              <td>{articulo.id}</td>
               <td>{articulo.descripcion}</td>
               <td>{articulo.categoria?.nombre}</td>
               <td>{articulo.precio ? `$${articulo.precio}` : "No definido"}</td>
-              <td><button className="btn btn-success" onClick={() => agregarAlPresupuesto(articulo)}>+</button></td>
+              <td><button className="btn btn-success" onClick={() => agregarAlPresupuesto(articulo)} disabled={presupuesto.some(item => item.id === articulo.id)} >+</button></td>
             </tr>
           ))}
         </tbody>
@@ -158,13 +159,21 @@ export const ArticuloPresupuesto = () => {
             <tbody>
               {presupuesto.map((item) => (
                 <tr key={item.id}>
-                  <td>{item.codigo}</td>
+                  <td>{item.id}</td>
                   <td>{item.descripcion}</td>
                   <td>{item.categoria?.nombre}</td>
                   <td>${item.precio}</td>
                   <td>
-                    <button className="btn btn-secondary btn-sm me-1" onClick={()=> restarCantidad(item.id)}>-</button>
-                       {item.cantidad} 
+                    <input type="number" min="1" value={item.cantidad} onChange={(e) => {
+                        const nuevaCantidad = parseInt(e.target.value, 10);
+                        if (nuevaCantidad >= 1) {
+                          const nuevoPresupuesto = presupuesto.map(i =>
+                            i.id === item.id ? { ...i, cantidad: nuevaCantidad } : i
+                          );
+                          setPresupuesto(nuevoPresupuesto);
+                          localStorage.setItem("presupuesto", JSON.stringify(nuevoPresupuesto));
+                        }
+                    }}/>
                   </td>
                   <td>
  
@@ -186,7 +195,6 @@ export const ArticuloPresupuesto = () => {
               </tr>
             </tfoot>
           </table>
-
         </>
       )}
     </div>
