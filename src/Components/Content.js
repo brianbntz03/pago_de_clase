@@ -8,6 +8,7 @@ import ListaPresupuesto from "../Presupuestos/ListaPresupuesto";
 import CreacionCategorias from "../pages/creacionCategorias";
 import Articulos from "../pages/Articulos";
 import Presupuestossss from "../Presupuestos/presupuestossss";
+import Ventas from "../pages/Ventas";
 
 export default function Content(){
     return(
@@ -42,6 +43,7 @@ export default function Content(){
                           <Route path="/crearcategorias" Component={CreacionCategorias}></Route>
                           <Route path="/articulos" Component={Articulos}></Route>
                           <Route path="/buscar-articulos-presupuesto" Component={Presupuestossss}></Route>
+                          <Route path="/ventas" Component={Ventas}></Route>
                         </Routes>
                     </div>
                   </div>
